@@ -38,11 +38,11 @@ library(tidyverse)
 - The combined data set will allow us to examine relationships between population of borough and school quality indicators.
 
 ```{r}
- boroughs <- read.csv("/Users/hollybrikowski/Desktop/STAT240/data/Projected_Population_2010-2040_-_Summary.csv")
+ boroughs <- read.csv("../data/Projected_Population_2010-2040_-_Summary.csv")
 ```
 
 ```{r}
-schools <- read.csv("/Users/hollybrikowski/Desktop/STAT240/data/School_Quality_Reports_Data.csv")
+schools <- read.csv("../data/School_Quality_Reports_Data.csv")
 ```
 
 ```{r}
