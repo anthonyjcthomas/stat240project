@@ -1,0 +1,67 @@
+---
+title: "Project Proposal"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      error = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE)
+library(tidyverse)
+```
+
+
+# Section 316:2 
+
+### Holly Brikowski, Claire Chen, Anthony Thomas, Garrett Wink
+
+> When during the week can the group meet? Consider needs of all group members.
+
+- We plan to meet Monday evenings from 6-7pm
+
+> What platforms will the group use to communicate and share documents?
+
+- We will be using Google Doc for working on the document/sharing our ideas, and communicate through text in a group chat.
+
+> Question of interest
+
+- How does the population density of boroughs correlate with school quality scores in New York City?
+
+> Description of the data:
+
+- The data was collected by the city of New York, from Data.Gov
+- One row from the quality of school file represents one school and its data for one particular year. For one row of the population density represents one borough. 
+- This data set provides population projections by borough over time, including demographic breakdowns.
+- The combined data set will allow us to examine relationships between population of borough and school quality indicators.
+
+```{r}
+ boroughs <- read.csv("/Users/hollybrikowski/Desktop/STAT240/data/Projected_Population_2010-2040_-_Summary.csv")
+```
+
+```{r}
+schools <- read.csv("/Users/hollybrikowski/Desktop/STAT240/data/School_Quality_Reports_Data.csv")
+```
+
+```{r}
+new_school <- schools %>%
+ drop_na() %>%
+  filter(School.Year >= "2020")
+```
+
+https://catalog.data.gov/dataset/school-quality-reports-data
+
+https://catalog.data.gov/dataset/projected-population-2010-2040-summary
+
+> Graph
+
+- A scatter plot showing the correlation between borough population and average school quality scores. 
+- Axes: Population Density (X), School Quality Score (Y).
+
+> Methods 
+
+- Linear regression to explore correlations and hypothesis testing to determine statistical significance.
+- Null Hypothesis: there is not a relationship between the two
+- Alternative Hypothesis: there is a relationship between the two
